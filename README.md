@@ -1,4 +1,16 @@
-# reference-project-customqa
+*Disclaimer - Domino Reference Projects are starter kits built by Domino researchers. They are not officially supported by Domino. Once loaded, they are yours to use or modify as you see fit. We hope they will be a beneficial tool on your journey!
+
+# OpenAI custom Q&A Reference Project
+
+This reference project shows how to use OpenAI's LLM to do Q&A over information that OpenAI's models have not been trained on and will not be able to provide answers out of the box. The way this works is to create embeddings of the document(s) that you want to query, run a semantic search to return information that can be provided as context/information along with the user's query as a prompt to the LLM and get results back. The project has the following files 
+
+* [OpenAI_QA_FAISS.ipynb](OpenAI_QA_FAISS.ipynb.ipynb) : This file loads a PDF,converts it to embeddings, stores the embeddings in Pinecone, runs the semantic search against the embeddings, constructs a prompt and calls OpenAI's models to get a response
+
+* [OpenAI_QA_FAISS.ipynb](OpenAI_QA_FAISS.ipynb) : This file loads a PDF, converts it to embeddings, stores the embeddings locally using a FAISS index, runs the semantic search against the embeddings, constructs a prompt and calls OpenAI's models to get a response
+
+* [faiss_store.pkl](faiss_store.pkl) : This file contains the FAISS embeddings of Select_Global_Value_Fund.pdf . You can use this if you don't want to (re)compute embeddings of Select_Global_Value_Fund.pdf again
+
+* [Select_Global_Value_Fund.pdf](Select_Global_Value_Fund.pdf) : A report that can be used as an example for the flow that has been described above
 
 ## Setup instructions
 
