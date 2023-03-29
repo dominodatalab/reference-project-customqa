@@ -26,8 +26,6 @@ RUN pip install poppler-utils
 RUN pip install openai
 RUN pip install faiss-cpu
 
-RUN pip install dash && \
-    pip install dash-renderer
 
 RUN pip install "detectron2@git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2"
 
