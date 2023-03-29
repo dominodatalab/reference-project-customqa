@@ -11,6 +11,7 @@ This project requires the following [compute environments](https://docs.dominoda
 
 **Dockerfile Instructions**
 
+```
 USER root
 
 RUN sudo apt -y install tesseract-ocr
@@ -32,3 +33,4 @@ RUN pip install "detectron2@git+https://github.com/facebookresearch/detectron2.g
 
 
 USER ubuntu
+```
