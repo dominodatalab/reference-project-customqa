@@ -31,7 +31,7 @@ def get_chat_llm(model,openai_api_key):
 
 
 
-def get_chain(vectorstore, model, openai_key):
+def get_chain(vectorstore, model, openai_api_key):
     
     qa_chain = None
     llm = None
