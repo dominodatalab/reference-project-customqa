@@ -107,7 +107,7 @@ if clear_button:
     memory.clear()
 
 
-if store and openai_api_key:
+if store and openai_key:
     qa = get_chain(store, model_name, openai_key)
 
 
