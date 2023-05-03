@@ -108,7 +108,7 @@ if clear_button:
 
 
 if store and openai_api_key:
-    qa = get_chain(store, model_name, openai_api_key)
+    qa = get_chain(store, model_name, openai_key)
 
 
 # container for chat history
