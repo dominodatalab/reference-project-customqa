@@ -33,11 +33,15 @@ def get_chat_llm(model,openai_key):
 
 def get_chain(vectorstore, model, openai_key):
     
+    qa_chain = None
+    llm = None
+    
     if model and openai_api_key:
         llm = get_chat_llm(model, openai_key)
 
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-    qa_chain = ConversationalRetrievalChain.from_llm(llm, vectorstore.as_retriever(), memory=memory, qa_prompt=QA_PROMPT, condense_question_prompt=CONDENSE_QUESTION_PROMPT)
+    if llm:
+        qa_chain = ConversationalRetrievalChain.from_llm(llm, vectorstore.as_retriever(), memory=memory, qa_prompt=QA_PROMPT, condense_question_prompt=CONDENSE_QUESTION_PROMPT)
 
     return qa_chain
 
@@ -90,7 +94,7 @@ model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 openai_key = st.text_input("Enter your OpenAI API key", type="password")
 
-llm = get_chat_llm(model_name, openai_key)
+
 
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
@@ -103,7 +107,7 @@ if clear_button:
     memory.clear()
 
 
-if store:
+if store and openai_api_key:
     qa = get_chain(store, model_name, openai_api_key)
 
 
