@@ -8,9 +8,9 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * [OpenAI_QA_FAISS.ipynb](OpenAI_QA_FAISS.ipynb) : This file loads a PDF, converts it to embeddings, stores the embeddings locally using a FAISS index, runs the semantic search against the embeddings, constructs a prompt and calls OpenAI's models to get a response. You will need your OpenAPI key to be set in the environment for this example.
 
-* [faiss_store.pkl](faiss_store.pkl) : This file contains the FAISS embeddings of `Select_Global_Value_Fund.pdf` . You can use this if you don't want to (re)compute embeddings of Select_Global_Value_Fund.pdf again
+* [faiss_ddl_doc_store.pkl](faiss_store.pkl) : This file contains the FAISS embeddings of Domino's documentation . You can use this if you don't want to (re)compute embeddings of Select_Global_Value_Fund.pdf again
 
-* [Select_Global_Value_Fund.pdf](Select_Global_Value_Fund.pdf) : A report that can be used as an example for the flow that has been described above
+* [Select_Global_Value_Fund.pdf](Select_Global_Value_Fund.pdf) : A report that can be used as an example for the flow that has been described above in case you want to compute embeddings on a fresh document
 
 ## Setup instructions
 
