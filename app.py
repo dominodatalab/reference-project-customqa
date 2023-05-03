@@ -19,7 +19,7 @@ from streamlit_chat import message
 
 
 
-def get_chat_llm(model,openai_key):
+def get_chat_llm(model,openai_api_key):
     
     if model and openai_api_key:
         if model and model == "GPT-3.5":
