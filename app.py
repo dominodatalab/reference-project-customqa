@@ -23,9 +23,9 @@ def get_chat_llm(model,openai_api_key):
     
     if model and openai_api_key:
         if model and model == "GPT-3.5":
-            llm = ChatOpenAI(temperature=0,openai_api_key=openai_key,model_name='gpt-3.5-turbo')
+            llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name='gpt-3.5-turbo')
         elif model and model == "GPT-4":
-            llm = llm = ChatOpenAI(temperature=0,openai_api_key=openai_key,model_name='gpt-4')
+            llm = llm = ChatOpenAI(temperature=0,openai_api_key=openai_api_key,model_name='gpt-4')
     
     return llm    
 
