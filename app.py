@@ -37,7 +37,7 @@ def get_chain(vectorstore, model, openai_api_key):
     llm = None
     
     if model and openai_api_key:
-        llm = get_chat_llm(model, openai_key)
+        llm = get_chat_llm(model, openai_api_key)
 
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     if llm:
