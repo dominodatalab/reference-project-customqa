@@ -19,9 +19,9 @@ from streamlit_chat import message
 
 
 
-def get_chat_llm(model):
+def get_chat_llm(model,openai_key):
     
-    if model:
+    if model and openai_api_key:
         if model and model == "GPT-3.5":
             llm = ChatOpenAI(temperature=0,openai_api_key=openai_key,model_name='gpt-3.5-turbo')
         elif model and model == "GPT-4":
@@ -31,10 +31,10 @@ def get_chat_llm(model):
 
 
 
-def get_chain(vectorstore, model):
+def get_chain(vectorstore, model, openai_key):
     
-    if model:
-        llm = get_chat_llm(model)
+    if model and openai_api_key:
+        llm = get_chat_llm(model, openai_key)
 
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     qa_chain = ConversationalRetrievalChain.from_llm(llm, vectorstore.as_retriever(), memory=memory, qa_prompt=QA_PROMPT, condense_question_prompt=CONDENSE_QUESTION_PROMPT)
@@ -90,7 +90,7 @@ model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 openai_key = st.text_input("Enter your OpenAI API key", type="password")
 
-llm = get_chat_llm(model_name)
+llm = get_chat_llm(model_name, openai_key)
 
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
@@ -104,7 +104,7 @@ if clear_button:
 
 
 if store:
-    qa = get_chain(store, model_name)
+    qa = get_chain(store, model_name, openai_api_key)
 
 
 # container for chat history
