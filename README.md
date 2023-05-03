@@ -10,6 +10,10 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * [faiss_ddl_doc_store.pkl](faiss_store.pkl) : This file contains the FAISS embeddings of Domino's documentation . You can use this if you don't want to (re)compute embeddings of Select_Global_Value_Fund.pdf again
 
+* [app.sh](app.sh) : The shell script needed to run the chat app
+
+* [app.py](app.py) : Streamlit app code for the Q&A chatbot
+
 * [Select_Global_Value_Fund.pdf](Select_Global_Value_Fund.pdf) : A report that can be used as an example for the flow that has been described above in case you want to compute embeddings on a fresh document
 
 ## Setup instructions
