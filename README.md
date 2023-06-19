@@ -18,6 +18,8 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * [Select_Global_Value_Fund.pdf](Select_Global_Value_Fund.pdf) : A report that can be used as an example for the flow that has been described above in case you want to compute embeddings on a fresh document
 
+* [Solution_Overview.pdf](Solution_Overview.pdf) : A diagram that depicts the different components and the flow of information between them
+
 ## Setup instructions
 
 This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present:
