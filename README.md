@@ -38,7 +38,7 @@ RUN sudo apt-get install poppler-utils
 RUN sudo apt -y install libmagic-dev
 
 RUN pip install pinecone-client
-RUN pip install langchain
+RUN pip install langchain==0.0.144
 RUN pip install unstructured[local-inference]
 RUN pip install poppler-utils
 RUN pip install openai
