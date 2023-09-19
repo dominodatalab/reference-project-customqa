@@ -22,7 +22,7 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 ## Setup instructions
 
-This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present:
+This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present. Please ensure the "Automatically make compatible with Domino" checkbox is selected while creating the environment.
 
 ### PromptEngineering
 **Environment Base** 
@@ -56,3 +56,4 @@ RUN pip install "detectron2@git+https://github.com/facebookresearch/detectron2.g
 
 USER ubuntu
 ```
+nvcr.io/nvidia/pytorch:22.12-py3
