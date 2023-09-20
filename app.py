@@ -69,7 +69,7 @@ Answer in Markdown:"""
 QA_PROMPT = PromptTemplate(template=template, input_variables=["question", "context"])
 
 # Uncomment if you want to store and use the OpenAI key stored in an environment variable
-# OPENAI_API_KEY = os.getenv('OPENAI_API_KEY') 
+openai_key = os.getenv('OPENAI_API_KEY') 
 
 # Load the embeddings from the pickle file; change the location if needed
 with open("faiss_ddl_doc_store.pkl", "rb") as f:
@@ -90,9 +90,10 @@ if 'total_tokens' not in st.session_state:
     st.session_state['total_tokens'] = []
 
 st.set_page_config(initial_sidebar_state='collapsed')
+openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
 model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
-openai_key = st.text_input("Enter your OpenAI API key", type="password")
+# openai_key = st.text_input("Enter your OpenAI API key", type="password")
 
 
 
@@ -134,7 +135,9 @@ with container:
     if st.session_state['generated']:
         with response_container:
             for i in range(len(st.session_state['generated'])):
-                message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
-                message(st.session_state["generated"][i], key=str(i))
+                # message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
+                # message(st.session_state["generated"][i], key=str(i))
+                message(st.session_state["past"][i], is_user=True, logo='https://freesvg.org/img/1367934593.png', key=str(i) + '_user')
+                message(st.session_state["generated"][i], logo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6e8aarUy37BOHMTSk-TUcs4AyAy3pfAHL-F2K49KHNEbI0QUlqWJFEqXYQvlBdYMMJA&usqp=CAU', key=str(i))
                 if 'total_tokens' in st.session_state and len(st.session_state['total_tokens']) > 0:
-                    st.write(f"Number of tokens: {st.session_state['total_tokens'][i]}")
+                    # st.write(f"Number of tokens: {st.session_state['total_tokens'][i]}")
