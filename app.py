@@ -95,7 +95,7 @@ model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
 # openai_key = st.text_input("Enter your OpenAI API key", type="password")
 
-
+qa = None
 
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
