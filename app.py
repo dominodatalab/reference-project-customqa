@@ -70,7 +70,7 @@ QA_PROMPT = PromptTemplate(template=template, input_variables=["question", "cont
 openai_key = os.getenv('OPENAI_API_KEY') 
 
 # Load the embeddings from the pickle file; change the location if needed
-with open("faiss_ddl_doc_store.pkl", "rb") as f:
+with open("healthcareplandetails.pkl", "rb") as f:
     store = pickle.load(f)
 
 
