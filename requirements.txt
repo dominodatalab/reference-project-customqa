@@ -1,0 +1,5 @@
+detectron2 @ git+https://github.com/facebookresearch/detectron2.git@d1e04565d3bec8719335b88be9e9b961bf3ec464
+faiss-cpu==1.7.4
+pinecone-client==2.2.4
+pypdf==3.16.2
+streamlit-chat==0.1.1

@@ -10,10 +10,9 @@ from langchain.chains import ChatVectorDBChain
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory, ConversationSummaryMemory
 from langchain.chains import ConversationalRetrievalChain
-from langchain.llms import GPT4All
-from langchain import HuggingFaceHub
 from langchain.llms import OpenAI
 from langchain.prompts.prompt import PromptTemplate
+
 from streamlit.web.server import websocket_headers
 from streamlit_chat import message
 
@@ -135,9 +134,7 @@ with container:
     if st.session_state['generated']:
         with response_container:
             for i in range(len(st.session_state['generated'])):
-                # message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
-                # message(st.session_state["generated"][i], key=str(i))
-                message(st.session_state["past"][i], is_user=True, logo='https://freesvg.org/img/1367934593.png', key=str(i) + '_user')
-                message(st.session_state["generated"][i], logo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6e8aarUy37BOHMTSk-TUcs4AyAy3pfAHL-F2K49KHNEbI0QUlqWJFEqXYQvlBdYMMJA&usqp=CAU', key=str(i))
+                message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
+                message(st.session_state["generated"][i], key=str(i))
                 # if 'total_tokens' in st.session_state and len(st.session_state['total_tokens']) > 0:
                     # st.write(f"Number of tokens: {st.session_state['total_tokens'][i]}")
