@@ -1,4 +1,5 @@
-*Disclaimer - Domino Reference Projects are starter kits built by Domino researchers. They are not officially supported by Domino. Once loaded, they are yours to use or modify as you see fit. We hope they will be a beneficial tool on your journey!
+## License
+This template is licensed to Customer subject to the terms of the license agreement between Domino and the Customer on file.
 
 # OpenAI custom Q&A Reference Project
 
