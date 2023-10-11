@@ -22,36 +22,28 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present. Please ensure the "Automatically make compatible with Domino" checkbox is selected while creating the environment.
 
-### PromptEngineering
 **Environment Base** 
 
-`Domino Standard Environment Py3.9 R4.2`
+`quay.io/domino/pre-release-environments:project-hub-gpu.main.latest`
 
-**Dockerfile Instructions**
-
+**Pluggable Workspace Tools** 
 ```
-USER root
-
-RUN sudo apt -y install tesseract-ocr
-RUN sudo apt-get -y install libpoppler-dev
-RUN sudo apt-get install poppler-utils
-RUN sudo apt -y install libmagic-dev
-
-RUN pip install pinecone-client
-RUN pip install langchain==0.0.144
-RUN pip install unstructured[local-inference]
-RUN pip install poppler-utils
-RUN pip install openai
-RUN pip install faiss-cpu
-
-RUN pip install streamlit && \
-    pip install streamlit-chat && \
-    pip install tiktoken 
-
-
-RUN pip install "detectron2@git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2"
-
-
-USER ubuntu
+jupyterlab:
+  title: "JupyterLab"
+  iconUrl: "/assets/images/workspace-logos/jupyterlab.svg"
+  start: [ "/opt/domino/workspaces/jupyterlab/start" ]
+  httpProxy:
+    internalPath: "/{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
+    port: 8888
+    rewrite: false
+    requireSubdomain: false
+vscode:
+ title: "vscode"
+ iconUrl: "/assets/images/workspace-logos/vscode.svg"
+ start: [ "/opt/domino/workspaces/vscode/start" ]
+ httpProxy:
+    port: 8888
+    requireSubdomain: false
 ```
-nvcr.io/nvidia/pytorch:22.12-py3
+
+Please change the value in `start` according to your Domino version.
