@@ -19,11 +19,13 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * Solution_Overview.pdf : A diagram that depicts the different components and the flow of information between them
 
-Please don't forget to set your OpenAI key as an environment variable before spinning up your workspace.
 
 ## Setup instructions
 
 This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present. Please ensure the "Automatically make compatible with Domino" checkbox is selected while creating the environment.
+
+Please don't forget to set your OpenAI key as an environment variable before spinning up your workspace.
+
 
 **Environment Base** 
 
