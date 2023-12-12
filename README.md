@@ -27,7 +27,7 @@ This project requires the following [compute environments](https://docs.dominoda
 Please don't forget to set your OpenAI key as an environment variable before spinning up your workspace.
 
 
-**Environment Base** 
+### Environment Requirements
 
 `quay.io/domino/pre-release-environments:project-hub-gpu.main.latest`
 
@@ -52,3 +52,6 @@ vscode:
 ```
 
 Please change the value in `start` according to your Domino version.
+
+### Hardware Requirements
+Use the small k8s hardware tier.
