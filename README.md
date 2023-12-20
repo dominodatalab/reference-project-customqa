@@ -1,5 +1,9 @@
 ## License
-This template is licensed under Apache 2.0 and contains the following open source components: Langchain ([MIT](https://github.com/langchain-ai/langchain/blob/master/LICENSE), Pinecone ([EULA](https://www.pinecone.io/thin-client-user-agreement/), [OpenAI](https://openai.com/policies/terms-of-use), and [FAISS](https://github.com/facebookresearch/faiss/blob/main/LICENSE)).
+This template is licensed under Apache 2.0 and contains the following components: 
+* Langchain [MIT](https://github.com/langchain-ai/langchain/blob/master/LICENSE)
+* Pinecone [EULA](https://www.pinecone.io/thin-client-user-agreement/)
+* [OpenAI](https://openai.com/policies/terms-of-use)
+* [FAISS](https://github.com/facebookresearch/faiss/blob/main/LICENSE)
 
 # OpenAI custom Q&A Reference Project
 
