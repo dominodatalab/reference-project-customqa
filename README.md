@@ -1,5 +1,9 @@
 ## License
-This template is licensed to Customer subject to the terms of the license agreement between Domino and the Customer on file.
+This template is licensed under Apache 2.0 and contains the following components: 
+* Langchain [MIT](https://github.com/langchain-ai/langchain/blob/master/LICENSE)
+* Pinecone [EULA](https://www.pinecone.io/thin-client-user-agreement/)
+* [OpenAI](https://openai.com/policies/terms-of-use)
+* [FAISS](https://github.com/facebookresearch/faiss/blob/main/LICENSE)
 
 # OpenAI custom Q&A Reference Project
 
