@@ -41,7 +41,7 @@ class TestOpenAIQA(unittest.TestCase):
 
     def test_pdf_file_exists(self):
         """ Test if the Northwind Healthcare PDF exists """
-        pdf_file_path = '../data/Northwind_Health_Plus_Benefits_Details.pdf'
+        pdf_file_path = '/mnt/code/data/Northwind_Health_Plus_Benefits_Details.pdf'
         self.assertTrue(os.path.isfile(pdf_file_path), "Northwind_Health_Plus_Benefits_Details.pdf does not exist")
 
 if __name__ == '__main__':
