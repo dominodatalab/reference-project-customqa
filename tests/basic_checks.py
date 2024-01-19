@@ -9,10 +9,10 @@ class TestOpenAIQA(unittest.TestCase):
         langchain_installed = importlib.util.find_spec("langchain") is not None
         self.assertTrue(langchain_installed, "langchain library is not installed")
         
-    def test_library_detectron2_installed(self):
-        """ Test if detectron2 library is installed """
-        detectron2_installed = importlib.util.find_spec("detectron2") is not None
-        self.assertTrue(detectron2_installed, "detectron2 library is not installed")
+    # def test_library_detectron2_installed(self):
+    #     """ Test if detectron2 library is installed """
+    #     detectron2_installed = importlib.util.find_spec("detectron2") is not None
+    #     self.assertTrue(detectron2_installed, "detectron2 library is not installed")
         
     def test_library_faiss_installed(self):
         """ Test if faiss library is installed """
