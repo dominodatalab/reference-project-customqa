@@ -17,7 +17,7 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * app.sh : The shell script needed to run the chat app
 
-* app.py : Streamlit app code for the Q&A chatbot. This app uses ```faiss_ddl_doc_store.pkl``` for the embeddings
+* app.py : Streamlit app code for the Q&A chatbot. This app uses ```faiss_ddl_doc_store.pkl``` for the embeddings. **Once the Chatbot is running, add your OpenAI API Key in the left-hand sidebar.**
 
 * Select_Global_Value_Fund.pdf : A report that can be used as an example for the flow that has been described above in case you want to compute embeddings on a fresh document
 
