@@ -55,10 +55,6 @@ Standalone question:"""
 CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
 
-
-# Uncomment if you want to store and use the OpenAI key stored in an environment variable
-openai_key = os.getenv('OPENAI_API_KEY') 
-
 # Load the embeddings from the pickle file; change the location if needed
 with open("healthcareplandetails.pkl", "rb") as f:
     store = pickle.load(f)
@@ -78,10 +74,15 @@ if 'total_tokens' not in st.session_state:
     st.session_state['total_tokens'] = []
 
 st.set_page_config(initial_sidebar_state='collapsed')
+# Uncomment below lineif you want to store and use the OpenAI key stored in an environment variable
+# openai_key = os.getenv('OPENAI_API_KEY') 
+
+# Comment this line if using the OpenAI key from the environment variable
 openai_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
+
 model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5", "GPT-4"))
 clear_button = st.sidebar.button("Clear Conversation", key="clear")
-# openai_key = st.text_input("Enter your OpenAI API key", type="password")
+
 
 qa = None
 
