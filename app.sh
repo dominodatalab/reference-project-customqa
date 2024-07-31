@@ -1,4 +1,4 @@
-mkdir ~/.streamlit
+mkdir -p ~/.streamlit
 echo "[browser]" > ~/.streamlit/config.toml
 echo "gatherUsageStats = true" >> ~/.streamlit/config.toml
 echo "serverAddress = \"0.0.0.0\"" >> ~/.streamlit/config.toml
