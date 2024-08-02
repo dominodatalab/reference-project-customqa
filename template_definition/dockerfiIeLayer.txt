@@ -1,0 +1,4 @@
+ RUN pip install langchain==0.2.0 --user
+ RUN pip install langchain_community==0.2.0 --user
+ RUN pip install langchain_openai==0.1.7 --user
+ RUN pip install langchain_text_splitters==0.2.0 --user
