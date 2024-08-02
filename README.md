@@ -42,10 +42,12 @@ Step 2
 Under dockerfile instructions use the instructions provided below to install the python packages into a new environment:
 
 ```
- RUN pip install langchain==0.2.0 --user
- RUN pip install langchain_community==0.2.0 --user
- RUN pip install langchain_openai==0.1.7 --user
- RUN pip install langchain_text_splitters==0.2.0 --user
+ RUN pip install \
+    langchain==0.2.0 \
+    langchain_community==0.2.0 \
+    langchain_openai==0.1.7 \
+    langchain_text_splitters==0.2.0 \
+    --user
  
 ```
 
