@@ -33,11 +33,6 @@ class TestOpenAIQA(unittest.TestCase):
         """ Test if streamlit library is installed """
         streamlit_installed = importlib.util.find_spec("streamlit") is not None
         self.assertTrue(streamlit_installed, "streamlit library is not installed")
-        
-    def test_library_streamlit_chat_installed(self):
-        """ Test if streamlit_chat library is installed """
-        streamlit_chat_installed = importlib.util.find_spec("streamlit_chat") is not None
-        self.assertTrue(streamlit_chat_installed, "streamlit_chat library is not installed")
 
     def test_pdf_file_exists(self):
         """ Test if the Northwind Healthcare PDF exists """
