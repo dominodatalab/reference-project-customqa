@@ -13,11 +13,11 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * OpenAI_QA_FAISS.ipynb : This file loads a PDF, converts it to embeddings, stores the embeddings locally using a FAISS index, runs the semantic search against the embeddings, constructs a prompt and calls OpenAI's models to get a response. You will need your OpenAPI key to be set in the environment for this example.
 
-* faiss_ddl_doc_store.pkl : This file contains the FAISS embeddings of Domino's documentation . You can use this if you don't want to (re)compute embeddings of Select_Global_Value_Fund.pdf again
+* faiss_ddl_doc_store.pkl : This file contains the FAISS embeddings of Domino's documentation. You can use this if you don't want to (re)compute embeddings of Select_Global_Value_Fund.pdf again
 
 * app.sh : The shell script needed to run the chat app
 
-* app.py : Streamlit app code for the Q&A chatbot. This app uses ```faiss_ddl_doc_store.pkl``` for the embeddings. **Once the Chatbot is running, add your OpenAI API Key in the left-hand sidebar.**
+* app.py : Streamlit app code for the Q&A chatbot. This app uses ```index.pkl``` in the ```faiss_store``` folder for the embeddings
 
 * Select_Global_Value_Fund.pdf : A report that can be used as an example for the flow that has been described above in case you want to compute embeddings on a fresh document
 
@@ -28,34 +28,28 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present. Please ensure the "Automatically make compatible with Domino" checkbox is selected while creating the environment.
 
-Please don't forget to set your OpenAI key as an environment variable before spinning up your workspace.
+Please don't forget to set your ```OPENAI_API_KEY``` key as an environment variable before spinning up your workspace. If you're using Pinecone, you'll need to set the ```PINECONE_API_KEY``` key as well.
 
 
 ### Environment Requirements
 
-`quay.io/domino/pre-release-environments:project-hub-gpu.main.latest`
+The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
 
-**Pluggable Workspace Tools** 
-```
-jupyterlab:
-  title: "JupyterLab"
-  iconUrl: "/assets/images/workspace-logos/jupyterlab.svg"
-  start: [ "/opt/domino/workspaces/jupyterlab/start" ]
-  httpProxy:
-    internalPath: "/{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
-    port: 8888
-    rewrite: false
-    requireSubdomain: false
-vscode:
- title: "vscode"
- iconUrl: "/assets/images/workspace-logos/vscode.svg"
- start: [ "/opt/domino/workspaces/vscode/start" ]
- httpProxy:
-    port: 8888
-    requireSubdomain: false
-```
+Step 1
+Use the ecosystem compute environment `Ecosystem Template Project Hub Gpu Environment 3dfab70225d0489c44410b17f9d32fce7a75464a` that's automatically built for you when you clone the AI Hub template
 
-Please change the value in `start` according to your Domino version.
+Step 2
+Under dockerfile instructions use the instructions provided below to install the python packages into a new environment:
+
+```
+ RUN pip install \
+    langchain==0.2.0 \
+    langchain_community==0.2.0 \
+    langchain_openai==0.1.7 \
+    langchain_text_splitters==0.2.0 \
+    --user
+ 
+```
 
 ### Hardware Requirements
-Use the small k8s hardware tier.
+Utilize small hardware tier
