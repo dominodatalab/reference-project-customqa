@@ -13,8 +13,6 @@ This reference project shows how to use OpenAI's LLM to do Q&A over information 
 
 * OpenAI_QA_FAISS.ipynb : This file loads a PDF, converts it to embeddings, stores the embeddings locally using a FAISS index, runs the semantic search against the embeddings, constructs a prompt and calls OpenAI's models to get a response. You will need your OpenAPI key to be set in the environment for this example.
 
-* faiss_ddl_doc_store.pkl : This file contains the FAISS embeddings of Domino's documentation. You can use this if you don't want to (re)compute embeddings of Select_Global_Value_Fund.pdf again
-
 * app.sh : The shell script needed to run the chat app
 
 * app.py : Streamlit app code for the Q&A chatbot. This app uses ```index.pkl``` in the ```faiss_store``` folder for the embeddings
@@ -36,7 +34,7 @@ Please don't forget to set your ```OPENAI_API_KEY``` key as an environment varia
 The necessary packages and versions can be found in the requirements.txt file. Ensure these packages are installed in a custom Domino Environment. Please find the docker instructions below:
 
 Step 1
-Use the ecosystem compute environment `Ecosystem Template Project Hub Gpu Environment 3dfab70225d0489c44410b17f9d32fce7a75464a` that's automatically built for you when you clone the AI Hub template
+Use the ecosystem compute environment `Ecosystem-Template-Domino-Standard-Environment-with-Python-3.9` that's automatically built for you when you clone the AI Hub template
 
 Step 2
 Under dockerfile instructions use the instructions provided below to install the python packages into a new environment:
